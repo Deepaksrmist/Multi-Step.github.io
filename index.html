@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+<body>
+    <form id="regForm" onsubmit="event.preventDefault()" autocomplete="off">
+        <!-- <h1>Register:</h1> -->
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab"><b style="font-size: 1.5rem; color: rebeccapurple;">User details:</b>
+            <p class="border">
+              <label for="first"><b>First Name:<br></b>
+                <input placeholder="First name..."  name="fname" id="firstname" class="space">
+                
+              </label>
+            </p>
+            <p class="border">
+              <label for="last"><b>Last Name:<br></b>
+                <input placeholder="Last name..." oninput="this.className = ''" name="lname" id="lastname" class="space">
+              </label>
+            </p>
+            <p class="border">
+                <label for="email"><b>Email:<br></b>
+                  <input placeholder="Email..." oninput="this.className = ''" name="email" id="mail" class="space">
+                </label>
+            </p>
+            <p class="border">
+                <label for="phone"><b>Phone Number:<br></b>
+                  <input placeholder="Phone..." oninput="this.className = ''" name="phone" id="number" class="space">
+                </label>
+            </p>
+            <!-- <p  class="border">
+                <label for="date"><b>Date Of Birth:<br></b>
+                  <input placeholder="DOB..." type="date" oninput="this.className = ''" name="dob" id="dob" class="space">
+                </label>
+            </p> -->
+            <p class="border">
+                <label for="gender"><b>Gender</b></label><br>
+                    <select name="gender" class="space">
+                      <option value="Male" name="male" id="male">Male</option>
+                      <option value="Female" name="female" id="female">Female</option>
+                    </select>
+              </p>
+            <p class="border">
+            <label for="subject"><b>Address</b></label><br>
+              <input placeholder="Address..." oninput="this.className = ''" name="address1" id="address" class="space">
+            </label>
+            </p>
+            <p class="border">
+              <label for="subject"><b>Address</b></label><br>
+                <input placeholder="Address(Optional)" oninput="this.className = ''" name="address2" id="address" class="space">
+              </label>
+            </p>
+            <p class="border">
+                <label for="pincode"><b>Pincode:<br></b>
+                  <input placeholder="Pincode..." oninput="this.className = ''" name="pincode" id="pincode" class="space">
+                </label>
+            </p>
+        </div>
+
+
+        <div class="tab"><b style="font-size: 1.5rem; color: rebeccapurple;">Book Count:</b>
+            <p>
+                <label for="bookcount"><b>How Many Book You have:</b></label><br>
+                    <select name="bookcount" id="book_count" onchange="Showhide(this.value)" required>
+                      <option value="select">Please choose an option</option>
+                      <option value="one" id="one">1</option>
+                      <option value="two" id="two">2</option>
+                      <option value="three" id="three">3</option>
+                      <option value="four" id="four">4</option>
+                      <option value="five" id="five">5</option>
+                      <option value="5+" id="five>">More than 5</option>
+                    </select>
+                    
+            </p>
+        </div>
+
+
+        <div class="tab"><b style="font-size: 1.5rem; color: rebeccapurple;">Book Details:</b>
+            <p class="border">
+                <label for="Category"><b>Category Of Book</b></label>
+                <i onclick="myfun1(this)" class="fa fa-arrow-up" id="toggle-btn1"></i><br>
+                  
+                    <select name="Category" class="space" id="cat">
+                      <option value="Marketing">Marketing</option>
+                      <option value="Finance">Finance</option>
+                      <option value="IT/Technical">IT/Technical</option>
+                      <option value="Business">Business</option>
+                    </select>
+
+                <strong id="showme">
+                    <select class="space" name="Category" id="cat2">
+                      <option value="Marketing">Marketing</option>
+                      <option value="Finance">Finance</option>
+                      <option value="IT/Technical">IT/Technical</option>
+                      <option value="Business">Business</option>
+                    </select>
+
+                    <select class="space" name="Category" id="cat3">
+                      <option value="Marketing">Marketing</option>
+                      <option value="Finance">Finance</option>
+                      <option value="IT/Technical">IT/Technical</option>
+                      <option value="Business">Business</option>
+                    </select>
+
+                    <select class="space" name="Category" id="cat4">
+                      <option value="Marketing">Marketing</option>
+                      <option value="Finance">Finance</option>
+                      <option value="IT/Technical">IT/Technical</option>
+                      <option value="Business">Business</option>
+                    </select>
+
+                    <select class="space" name="Category" id="cat5">
+                      <option value="Marketing">Marketing</option>
+                      <option value="Finance">Finance</option>
+                      <option value="IT/Technical">IT/Technical</option>
+                      <option value="Business">Business</option>
+                  </select>
+                </strong>
+
+                  
+            </p>
+
+            <p class="border">
+                <label for="Edition"><b>Edition Of Book</b></label>
+                <i onclick="myfun2(this)" class="fa fa-arrow-up" id="toggle-btn2"></i><br>
+                    
+                <select class="space" name="Edition" id="edition">
+                      <option value="1st Edition">1st Edition</option>
+                      <option value="2nd Edition">2nd Edition</option>
+                      <option value="3rd Edition">3rd Edition</option>
+                      <option value="4th Edition">4th Edition</option>
+                    </select>
+
+                  <strong id="showme2">
+                    <select class="space" name="Edition" id="edition2">
+                      <option value="1st Edition">1st Edition</option>
+                      <option value="2nd Edition">2nd Edition</option>
+                      <option value="3rd Edition">3rd Edition</option>
+                      <option value="4th Edition">4th Edition</option>
+                    </select>
+                    <select class="space" name="Edition" id="edition3">
+                      <option value="1st Edition">1st Edition</option>
+                      <option value="2nd Edition">2nd Edition</option>
+                      <option value="3rd Edition">3rd Edition</option>
+                      <option value="4th Edition">4th Edition</option>
+                    </select>
+                    <select class="space" name="Edition" id="edition4">
+                      <option value="1st Edition">1st Edition</option>
+                      <option value="2nd Edition">2nd Edition</option>
+                      <option value="3rd Edition">3rd Edition</option>
+                      <option value="4th Edition">4th Edition</option>
+                    </select>
+                    <select class="space" name="Edition" id="edition5">
+                      <option value="1st Edition">1st Edition</option>
+                      <option value="2nd Edition">2nd Edition</option>
+                      <option value="3rd Edition">3rd Edition</option>
+                      <option value="4th Edition">4th Edition</option>
+                    </select>
+                  </strong>
+            </p>
+
+            <p class="border">
+                <label for="Year"><b>Year Of Publication</b></label>
+                <i onclick="myfun3(this)" class="fa fa-arrow-up" id="toggle-btn3"></i><br>
+
+                    <select class="space" name="Year" id="year">
+                      <option value="2005">2005</option>
+                      <option value="2006">2006</option>
+                      <option value="2007">2007</option>
+                      <option value="2008">2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                    </select>
+
+                    <strong id="showme3">
+                      <select class="space" name="Year" id="year2">
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                      </select>
+
+                      <select class="space" name="Year" id="year3">
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                      </select>
+
+                      <select class="space" name="Year" id="year4">
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                      </select>
+
+                      <select class="space" name="Year" id="year5">
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                      </select>
+                    </strong>
+            </p>
+
+            <p class="border">
+              <i onclick="myfun4(this)" class="fa fa-arrow-up" id="toggle-btn4"></i>
+              <label for="phone" id="isbn"><b>ISBN Number:<b><br>
+                <input placeholder="ISBN Number..." class="space" oninput="this.className = ''" type="number" name="ISBN">
+              </label>
+                  <br>
+                  <br>
+            <strong id="showme4">
+                <input placeholder="ISBN Number..." class="space" oninput="this.className = ''" type="number" name="ISBN" id="isbn2">
+                  <br>
+                  <br>
+                <input placeholder="ISBN Number..." class="space" oninput="this.className = ''" type="number" name="ISBN" id="isbn3">
+                  <br>
+                  <br>            
+                <input placeholder="ISBN Number..." class="space" oninput="this.className = ''" type="number" name="ISBN" id="isbn4">
+                  <br>
+                  <br>         
+                <input placeholder="ISBN Number..." class="space" oninput="this.className = ''" type="number" name="ISBN" id="isbn5">
+            </strong>
+            </p>
+
+            <p class="border">
+              <i onclick="myfun5(this)" class="fa fa-arrow-up" id="toggle-btn5"></i>
+                  <label for="bookname" id="bookname"><b>Book Name:<br></b>
+                    <input placeholder="Book name..." class="space" oninput="this.className = ''" name="bookname">
+                  </label>
+                  <br>
+                <strong id="showme5">
+                  <label for="bookname" id="bookname2"><b>Book Name:<br></b>
+                    <input placeholder="Book name..." class="space" oninput="this.className = ''" name="bookname">
+                  </label>
+                  
+                  <br>
+                  <label for="bookname" id="bookname3"><b>Book Name:<br></b>
+                    <input placeholder="Book name..." class="space" oninput="this.className = ''" name="bookname">
+                  </label>
+                  
+                  <br>
+                  <label for="bookname" id="bookname4"><b>Book Name:<br></b>
+                    <input placeholder="Book name..." class="space" oninput="this.className = ''" name="bookname">
+                  </label>
+                  
+                  <br>
+                  <label for="bookname" id="bookname5"><b>Book Name:<br></b>
+                    <input placeholder="Book name..." class="space" oninput="this.className = ''" name="bookname">
+                  </label>
+                  <br>
+                </strong>
+            </p>
+
+            <p class="border">
+              <label for="condition"><b>Condition Of Book</b></label>
+              <i onclick="myfun6(this)" class="fa fa-arrow-up" id="toggle-btn6"></i>
+                  <select class="space" name="condition" id="cond">
+                    <option value="Average">Average</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Excellent(Used">Excellent(Used)</option>
+                    <option value="Excellent(Unused">Excellent(Unused)</option>
+                  </select>
+
+                <strong id="showme6">
+                  <select class="space" name="condition" id="cond2">
+                    <option value="Average">Average</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Excellent(Used">Excellent(Used)</option>
+                    <option value="Excellent(Unused">Excellent(Unused)</option>
+                  </select>
+                  
+                  <select class="space" name="condition" id="cond3">
+                    <option value="Average">Average</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Excellent(Used">Excellent(Used)</option>
+                    <option value="Excellent(Unused">Excellent(Unused)</option>
+                  </select>
+                  
+                  <select class="space" name="condition" id="cond4">
+                    <option value="Average">Average</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Excellent(Used">Excellent(Used)</option>
+                    <option value="Excellent(Unused">Excellent(Unused)</option>
+                  </select>
+                  
+                  <select class="space" name="condition" id="cond5">
+                    <option value="Average">Average</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Excellent(Used">Excellent(Used)</option>
+                    <option value="Excellent(Unused">Excellent(Unused)</option>
+                  </select>
+                </strong>
+            </p>
+
+            <!-- <p class="border">
+                <label for="img"><b>Select image 1:</b></label>
+                <input type="file" id="img" name="img" accept="image/*">
+            </p>
+             <p class="border">
+                <label for="img"><b>Select image 2:</b></label>
+                <input type="file" id="img" name="img" accept="image/*">
+            </p>
+            <p class="border">
+                <label for="img"><b>Select image 3:</b></label>
+                <input type="file" id="img" name="img" accept="image/*">
+            </p>
+            <p class="border">
+                <label for="img"><b>Select image 4:</b></label>
+                <input type="file" id="img" name="img" accept="image/*">
+            </p> -->
+            <p class="border">
+              <i onclick="myfun7(this)" class="fa fa-arrow-up" id="toggle-btn7"></i>
+                <label for="mrp" id="mrp"><b>MRP:</b></label>
+                  <input placeholder="MRP..." class="space" type="number" name="MRP" oninput="this.className = ''" id="book_price">
+                </label>
+                <br>
+
+              <strong id="showme7">
+                <label for="mrp" id="mrp2"><b>MRP:</b>
+                  <input placeholder="MRP..." class="space" type="number" name="MRP" oninput="this.className = ''" id="book_price">
+                </label>
+                <br>
+
+                <label for="mrp" id="mrp3"><b>MRP:</b>
+                  <input placeholder="MRP..." class="space" type="number" name="MRP" oninput="this.className = ''" id="book_price">                  
+                </label>
+                <br>
+
+                <label for="mrp" id="mrp4"><b>MRP:</b>
+                  <input placeholder="MRP..." class="space" type="number" name="MRP" oninput="this.className = ''" id="book_price">                 
+                </label>
+                <br>
+
+                <label for="mrp" id="mrp5"><b>MRP:</b>
+                  <input placeholder="MRP..." class="space" type="number" name="MRP" oninput="this.className = ''" id="book_price"> 
+                </label>
+                <br>
+              </strong>
+              </p>
+          </div>
+
+        <div class="tab">
+          <h2>Thank you for Selling your book <span id="user_detail" style="color: red;"></span></h2>
+          <h2>Book lie in Group: <span id="group" style="color: red;"></span></h2>
+          <h2>Total Price Of Book: <span id="price" style="color: red;"></span></h2>
+            <p style="background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 10px 0px 10px 0px; width: 50%;">
+              <strong>Note:</strong> Beta dhyan se padh lo iss baad book bechna warna pele jaoge
+            </p>
+    
+        </div>
+
+        <div style="overflow:auto;">
+          <div id="submit">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <button type="button" id="submit_btn" onclick="nextPrev(1);event.preventDefault()">Submit</button>
+          </div>
+          <h2 id="whatsapp">Contact Me on 8858094789:</h2>
+        </div>
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+      </form>
+
+      <script>
+       function myfun1(x){
+        x.classList.toggle("fa-arrow-down");
+        let adarsh = document.getElementById('showme');
+          if (adarsh.style.display === "block") {
+             adarsh.style.display = "none";
+          } else {
+            adarsh.style.display = "block";
+          }
+       }
+       function myfun2(x){
+        x.classList.toggle("fa-arrow-down");
+        let adarsh = document.getElementById('showme2');
+          if (adarsh.style.display === "block") {
+             adarsh.style.display = "none";
+          } else {
+            adarsh.style.display = "block";
+          }
+       }
+       function myfun3(x){
+        x.classList.toggle("fa-arrow-down");
+        let adarsh = document.getElementById('showme3');
+          if (adarsh.style.display === "block") {
+             adarsh.style.display = "none";
+          } else {
+            adarsh.style.display = "block";
+          }
+       }
+       function myfun4(x){
+        x.classList.toggle("fa-arrow-down");
+        let adarsh = document.getElementById('showme4');
+          if (adarsh.style.display === "block") {
+             adarsh.style.display = "none";
+          } else {
+            adarsh.style.display = "block";
+          }
+       }
+       function myfun5(x){
+        x.classList.toggle("fa-arrow-down");
+        let adarsh = document.getElementById('showme5');
+          if (adarsh.style.display === "block") {
+             adarsh.style.display = "none";
+          } else {
+            adarsh.style.display = "block";
+          }
+       }
+       function myfun6(x){
+        x.classList.toggle("fa-arrow-down");
+        let adarsh = document.getElementById('showme6');
+          if (adarsh.style.display === "block") {
+             adarsh.style.display = "none";
+          } else {
+            adarsh.style.display = "block";
+          }
+       }
+       function myfun7(x){
+        x.classList.toggle("fa-arrow-down");
+        let adarsh = document.getElementById('showme7');
+          if (adarsh.style.display === "block") {
+             adarsh.style.display = "none";
+          } else {
+            adarsh.style.display = "block";
+          }
+       }
+        let x = document.getElementById('submit_btn');
+        x.addEventListener("click", getvalue);
+        function getvalue(e){
+          // let MRP = document.getElementById('mrp');
+          let GROUP = document.getElementById('group');
+        
+          let bookprice = document.getElementById('book_price').value;
+          let mainprice = document.createTextNode(bookprice);
+          let price = document.getElementById('price');
+          price.innerText = mainprice.textContent;
+
+          if(bookprice >= 1000){
+            GROUP.innerText = "GROUP A";
+          } else if(bookprice >= 800 && bookprice <= 999){
+            GROUP.innerText = "GROUP B";
+          } else if(bookprice >= 600 && bookprice <= 799){
+            GROUP.innerText = "GROUP C";
+          } else if(bookprice >= 300 && bookprice <= 599){
+            GROUP.innerText = "GROUP D";
+          }
+          else if(bookprice < 300){
+            GROUP.innerText = "Will not Accept Book less than Rs.300";
+          } else{ 
+            GROUP.innerText = "Lie in OTHER group"
+          }
+          e.preventDefault();
+          let fname = document.getElementById('firstname').value;
+          let text = document.createTextNode(fname);
+          let user = document.getElementById('user_detail');
+          user.innerText = text.textContent;
+        }
+
+          function Showhide(value){
+            let x = document.getElementById('book_count');
+            let y = document.getElementById('submit');
+            let z = document.getElementById('whatsapp');
+            let a = document.getElementById('cat2');
+            let b = document.getElementById('cat3');
+            let c = document.getElementById('cat4');
+            let d = document.getElementById('cat5');
+            let btn = document.getElementById('toggle-btn1');
+            let a2 = document.getElementById('edition2');
+            let b2 = document.getElementById('edition3');
+            let c2 = document.getElementById('edition4');
+            let d2 = document.getElementById('edition5');
+            let btn2 = document.getElementById('toggle-btn2');
+            let a3 = document.getElementById('year2');
+            let b3 = document.getElementById('year3');
+            let c3 = document.getElementById('year4');
+            let d3 = document.getElementById('year5');
+            let btn3 = document.getElementById('toggle-btn3');
+            let a4 = document.getElementById('isbn2');
+            let b4 = document.getElementById('isbn3');
+            let c4 = document.getElementById('isbn4');
+            let d4 = document.getElementById('isbn5');
+            let btn4 = document.getElementById('toggle-btn4');
+            let a5 = document.getElementById('bookname2');
+            let b5 = document.getElementById('bookname3');
+            let c5 = document.getElementById('bookname4');
+            let d5 = document.getElementById('bookname5');
+            let btn5 = document.getElementById('toggle-btn5');
+            let a6 = document.getElementById('cond2');
+            let b6 = document.getElementById('cond3');
+            let c6 = document.getElementById('cond4');
+            let d6 = document.getElementById('cond5');
+            let btn6 = document.getElementById('toggle-btn6');
+            let a7 = document.getElementById('mrp2');
+            let b7 = document.getElementById('mrp3');
+            let c7 = document.getElementById('mrp4');
+            let d7 = document.getElementById('mrp5');
+            let btn7 = document.getElementById('toggle-btn7');
+           
+            if(x.value == "5+"){
+              y.style.display = "none";
+              z.style.display = "block";
+            }
+            else if(x.value == "five"){
+                y.style.display = "block";
+                z.style.display = "none";
+                a.style.display = "block";
+                b.style.display = "block";
+                c.style.display = "block";
+                d.style.display = "block";
+                btn.style.display = "block";
+                a2.style.display = "block";
+                b2.style.display = "block";
+                c2.style.display = "block";
+                d2.style.display = "block";
+                btn2.style.display = "block";
+                a3.style.display = "block";
+                b3.style.display = "block";
+                c3.style.display = "block";
+                d3.style.display = "block";
+                btn3.style.display = "block";
+                a4.style.display = "block";
+                b4.style.display = "block";
+                c4.style.display = "block";
+                d4.style.display = "block";
+                btn4.style.display = "block";
+                a5.style.display = "block";
+                b5.style.display = "block";
+                c5.style.display = "block";
+                d5.style.display = "block";
+                btn5.style.display = "block";
+                a6.style.display = "block";
+                b6.style.display = "block";
+                c6.style.display = "block";
+                d6.style.display = "block";
+                btn6.style.display = "block";
+                a7.style.display = "block";
+                b7.style.display = "block";
+                c7.style.display = "block";
+                d7.style.display = "block";
+                btn7.style.display = "block";
+            }
+            else if(x.value == "four"){
+                y.style.display = "block";
+                z.style.display = "none";
+                a.style.display = "block";
+                b.style.display = "block";
+                c.style.display = "block";
+                d.style.display = "none";
+                btn.style.display = "block";
+                a2.style.display = "block";
+                b2.style.display = "block";
+                c2.style.display = "block";
+                d2.style.display = "none";
+                btn2.style.display = "block";
+                a3.style.display = "block";
+                b3.style.display = "block";
+                c3.style.display = "block";
+                d3.style.display = "none";
+                btn3.style.display = "block";
+                a4.style.display = "block";
+                b4.style.display = "block";
+                c4.style.display = "block";
+                d4.style.display = "none";
+                btn4.style.display = "block";
+                a5.style.display = "block";
+                b5.style.display = "block";
+                c5.style.display = "block";
+                d5.style.display = "none";
+                btn5.style.display = "block";
+                a6.style.display = "block";
+                b6.style.display = "block";
+                c6.style.display = "block";
+                d6.style.display = "none";
+                btn6.style.display = "block";
+                a7.style.display = "block";
+                b7.style.display = "block";
+                c7.style.display = "block";
+                d7.style.display = "none";
+                btn7.style.display = "block";
+                
+            }
+            else if(x.value == "three"){
+                y.style.display = "block";
+                z.style.display = "none";
+                a.style.display = "block";
+                b.style.display = "block";
+                c.style.display = "none";
+                d.style.display = "none";
+                btn.style.display = "block";
+                a2.style.display = "block";
+                b2.style.display = "block";
+                c2.style.display = "none";
+                d2.style.display = "none";
+                btn2.style.display = "block";
+                a3.style.display = "block";
+                b3.style.display = "block";
+                c3.style.display = "none";
+                d3.style.display = "none";
+                btn3.style.display = "block";
+                a4.style.display = "block";
+                b4.style.display = "block";
+                c4.style.display = "none";
+                d4.style.display = "none";
+                btn4.style.display = "block";
+                a5.style.display = "block";
+                b5.style.display = "block";
+                c5.style.display = "none";
+                d5.style.display = "none";
+                btn5.style.display = "block";
+                a6.style.display = "block";
+                b6.style.display = "block";
+                c6.style.display = "none";
+                d6.style.display = "none";
+                btn6.style.display = "block"; 
+                a7.style.display = "block";
+                b7.style.display = "block";
+                c7.style.display = "none";
+                d7.style.display = "none";
+                btn7.style.display = "block"; 
+            }
+            else if(x.value == "two"){
+                y.style.display = "block";
+                z.style.display = "none";
+                a.style.display = "block";
+                b.style.display = "none";
+                c.style.display = "none";
+                d.style.display = "none";  
+                btn.style.display = "block";
+                a2.style.display = "block";
+                b2.style.display = "none";
+                c2.style.display = "none";
+                d2.style.display = "none";  
+                btn2.style.display = "block";
+                a3.style.display = "block";
+                b3.style.display = "none";
+                c3.style.display = "none";
+                d3.style.display = "none";  
+                btn3.style.display = "block"; 
+                a4.style.display = "block";
+                b4.style.display = "none";
+                c4.style.display = "none";
+                d4.style.display = "none";  
+                btn4.style.display = "block";
+                a5.style.display = "block";
+                b5.style.display = "none";
+                c5.style.display = "none";
+                d5.style.display = "none";  
+                btn5.style.display = "block";
+                a6.style.display = "block";
+                b6.style.display = "none";
+                c6.style.display = "none";
+                d6.style.display = "none";  
+                btn6.style.display = "block";
+                a7.style.display = "block";
+                b7.style.display = "none";
+                c7.style.display = "none";
+                d7.style.display = "none";  
+                btn7.style.display = "block";  
+            }
+            else if(x.value == "one"){
+                y.style.display = "block";
+                z.style.display = "none";
+                a.style.display = "none"; 
+                b.style.display = "none";
+                c.style.display = "none";
+                d.style.display = "none";
+                btn.style.display = "none";
+                a2.style.display = "none"; 
+                b2.style.display = "none";
+                c2.style.display = "none";
+                d2.style.display = "none";
+                btn2.style.display = "none";
+                a3.style.display = "none"; 
+                b3.style.display = "none";
+                c3.style.display = "none";
+                d3.style.display = "none";
+                btn3.style.display = "none";
+                a4.style.display = "none"; 
+                b4.style.display = "none";
+                c4.style.display = "none";
+                d4.style.display = "none";
+                btn4.style.display = "none";
+                a5.style.display = "none"; 
+                b5.style.display = "none";
+                c5.style.display = "none";
+                d5.style.display = "none";
+                btn5.style.display = "none";
+                a6.style.display = "none"; 
+                b6.style.display = "none";
+                c6.style.display = "none";
+                d6.style.display = "none";
+                btn6.style.display = "none";
+                a7.style.display = "none"; 
+                b7.style.display = "none";
+                c7.style.display = "none";
+                d7.style.display = "none";
+                btn7.style.display = "none";
+            }
+          }
+
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+        
+        function showTab(n) {
+          // This function will display the specified tab of the form...
+          var x = document.getElementsByClassName("tab");
+          let y = document.getElementById('submit_btn');
+
+          x[n].style.display = "block";
+          //... and fix the Previous/Next buttons:
+          if (n == 0) {
+            document.getElementById("prevBtn").style.display = "none";
+          } else if(n == 3){
+            document.getElementById("prevBtn").style.display = "none";
+            document.getElementById("nextBtn").style.display = "none";
+            y.style.display = "none";
+          }else if(n == 2){
+            document.getElementById("nextBtn").style.display = "none";
+            y.style.display = "inline-block";
+          }
+          else {
+            document.getElementById("prevBtn").style.display = "inline";
+          }
+          if (n == (x.length - 1)) {
+            document.getElementById("nextBtn").innerHTML = "Submit";
+          } else {
+            document.getElementById("nextBtn").innerHTML = "Next";
+          }
+          //... and run a function that will display the correct step indicator:
+          fixStepIndicator(n)
+        }
+        
+        function nextPrev(n) {
+          // This function will figure out which tab to display
+          var x = document.getElementsByClassName("tab");
+          // Exit the function if any field in the current tab is invalid:
+          if (n == 1 && !validateForm()) return false;
+          // Hide the current tab:
+          x[currentTab].style.display = "none";
+          // Increase or decrease the current tab by 1:
+          currentTab = currentTab + n;
+          // if you have reached the end of the form...
+          if (currentTab >= x.length) {
+            // ... the form gets submitted:
+            // document.getElementById("regForm").submit();
+            // return false;
+          }
+          // Otherwise, display the correct tab:
+          showTab(currentTab);
+        }
+        
+        function validateForm() {
+          // This function deals with validation of the form fields
+          var x, y, i, valid = true;
+          x = document.getElementsByClassName("tab");
+          y = x[currentTab].getElementsByTagName("input");
+          // A loop that checks every input field in the current tab:
+          for (i = 0; i < y.length; i++) {
+            // If a field is empty...
+            if (y[i].value == "") {
+              // add an "invalid" class to the field:
+              y[i].className += " invalid";
+              // and set the current valid status to false
+              valid = false;
+            }
+          }
+          
+          // If the valid status is true, mark the step as finished and valid:
+          if (valid) {
+            document.getElementsByClassName("step")[currentTab].className += " finish";
+          }
+          return valid; // return the valid status
+          
+        }
+        
+        function fixStepIndicator(n) {
+          // This function removes the "active" class of all steps...
+          var i, x = document.getElementsByClassName("step");
+          for (i = 0; i < x.length; i++) {
+            x[i].className = x[i].className.replace(" active", "");
+          }
+          //... and adds the "active" class on the current step:
+          x[n].className += " active";
+        }
+        </script>
+
+</body>
+</html>

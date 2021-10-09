@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f1f1f1;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  #regForm {
+    background-color: #ffffff;
+    margin: auto;
+    font-family: Raleway;
+    padding: 0px 40px 0px 40px;
+    width: 100%;
+    /* min-width: 300px; */
+  }
+  
+  h1 {
+    text-align: center;  
+  }
+
+  select{
+    width: 50%;
+    padding: 12px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-size: 17px;
+    font-family: Raleway;
+    /* border-radius: 0; */
+    /* border: 1px solid #aaaaaa; */
+    resize: vertical;
+  }
+  
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    /* border: 1px solid #aaaaaa; */
+  }
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+    width: 100%;
+  }
+
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+  #whatsapp{
+      display: none;
+      color: rebeccapurple;
+      border-radius: 10px;
+  }
+  
+  button {
+    background-color: #7fad39;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  #prevBtn {
+    background-color: #bbbbbb;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #7fad39;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  #submit_btn{
+    display: none;
+  }
+
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #7fad39;
+  }
+
+  /* Giving border to all input field of Book Details */
+  .border{
+    border: 1px solid black;
+    width: 50%;
+    padding: 10px;
+  }
+
+  /* Width of input field */
+  .space{
+    width: 100%;
+  }
+
+  #cat2{
+    display: none;
+  }
+  #cat3{
+    display: none;
+  }
+  #cat4{
+    display: none;
+  }
+  #cat5{
+    display: none;
+  }
+
+  #edition2{
+    display: none;
+  }
+  #edition3{
+    display: none;
+  }
+  #edition4{
+    display: none;
+  }
+  #edition5{
+    display: none;
+  }
+
+  #year2{
+    display: none;
+  }
+  #year3{
+    display: none;
+  }
+  #year4{
+    display: none;
+  }
+  #year5{
+    display: none;
+  }
+
+  #isbn2{
+    display: none;
+  }
+  #isbn3{
+    display: none;
+  }
+  #isbn4{
+    display: none;
+  }
+  #isbn5{
+    display: none;
+  }
+
+  #bookname2{
+    display: none;
+  }
+  #bookname3{
+    display: none;
+  }
+  #bookname4{
+    display: none;
+  }
+  #bookname5{
+    display: none;
+  }
+
+  #cond2{
+    display: none;
+  }
+  #cond3{
+    display: none;
+  }
+  #cond4{
+    display: none;
+  }
+  #cond5{
+    display: none;
+  }
+
+  #mrp2{
+    display: none;
+  }
+  #mrp3{
+    display: none;
+  }
+  #mrp4{
+    display: none;
+  }
+  #mrp5{
+    display: none;
+  }
+  .fa {
+    font-size: 70px;
+    cursor: pointer;
+    user-select: none;
+    float: right;
+  }
+  
